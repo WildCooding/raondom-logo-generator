@@ -14,44 +14,20 @@
 </head>
 <body class="bg-gray-900 text-gray-300">
 
-    <div class="container mx-auto max-w-4xl px-4 py-12">
+<div class="container mx-auto max-w-4xl px-4 py-12">
 
-        <header class="text-center mb-12">
+<header class="text-center mb-12">
             <h1 class="text-5xl font-bold text-white mb-4">Zufälliger Logo-Generator</h1>
             <p class="text-xl text-gray-400">
                 Ein einfacher, webbasierter Generator zum Erstellen von einzigartigen, organischen Logos im "Blob"-Stil mit transparentem Hintergrund. Perfekt für schnelle Design-Ideen, Platzhalter oder als Inspiration.
-            </p>  
-        </header>
+            </p>
+</header>
 
-        <main>
-            <!-- Vorschaubereich -->
-            <section id="preview" class="mb-16">
-                <h2 class="text-3xl font-bold text-white text-center mb-8">Vorschau</h2>
-                <div class="bg-gray-800 rounded-xl p-6 shadow-2xl">
-                    <p class="text-center text-gray-400 mb-6">
-                        Hier sind zwei Beispiele, die mit dem Generator erstellt wurden. Die Form kann über einen Regler von "eckiger" zu "runder" angepasst werden.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-                        <!-- Eckigeres Beispiel -->
-                        <div class="bg-gray-700 rounded-lg p-4 flex flex-col">
-                            <h3 class="text-lg font-semibold text-white mb-2">Eckigere Form</h3>
-                            <div class="flex-grow flex items-center justify-center bg-white rounded-md">
-                               <img src="https://github.com/WildCooding/raondom-logo-generator/blob/main/Example01.png?raw=true" alt="Beispiel eines eckigeren Logos" class="rounded-md max-w-full max-h-full">
-                            </div>
-                        </div>
-                        <!-- Runderes Beispiel -->
-                        <div class="bg-gray-700 rounded-lg p-4 flex flex-col">
-                            <h3 class="text-lg font-semibold text-white mb-2">Rundere Form</h3>
-                            <div class="flex-grow flex items-center justify-center bg-white rounded-md">
-                                <img src="https://github.com/WildCooding/raondom-logo-generator/blob/main/Example02.png?raw=true" alt="Beispiel eines runderen Logos" class="rounded-md max-w-full max-h-full">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<main>
+           
 
-            <!-- Feature-Bereich -->
-            <section id="features" class="mb-16">
+
+<section id="features" class="mb-16">
                 <h2 class="text-3xl font-bold text-white text-center mb-8">✨ Features</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
@@ -78,7 +54,7 @@
             </section>
 
             <!-- Anleitungs-Bereich -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <section id="usage">
                     <h2 class="text-3xl font-bold text-white mb-6">🚀 Benutzung</h2>
                     <ol class="list-decimal list-inside space-y-4 text-lg">
@@ -89,7 +65,7 @@
                     </ol>
                 </section>
 
-                <section id="local-dev">
+<section id="local-dev">
                     <h2 class="text-3xl font-bold text-white mb-6">💻 Lokal ausführen</h2>
                     <div class="space-y-4">
                         <div>
@@ -109,9 +85,9 @@
             </div>
         </main>
         
-        <footer class="text-center mt-16 pt-8 border-t border-gray-700">
+<footer class="text-center mt-16 pt-8 border-t border-gray-700">
             <p class="text-gray-500">Das ist alles! Viel Spaß beim Erstellen deiner Logos.</p>
-        </footer>
+</footer>
 
     </div>
 </body>
