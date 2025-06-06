@@ -64,52 +64,62 @@
             background: #4a5568;
             border-radius: 3px;
         }
-
     </style>
 </head>
 <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
 
-    <div class="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl p-8 text-center">
-        <h1 class="text-3xl font-bold mb-2 text-gray-100">Zufälliger Logo-Generator</h1>
-        <p class="text-gray-400 mb-8">Erstelle einzigartige, organische Logos mit zufälligen Farben und Formen.</p>
-
-        <!-- Logo-Anzeigebereich -->
-        <div id="logo-container" class="checkerboard bg-white rounded-lg w-full h-80 flex items-center justify-center p-4 mb-6 transition-all duration-300">
-            <svg id="generated-logo" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop id="startColor" offset="0%" style="stop-color:#34D399; stop-opacity:1" />
-                        <stop id="endColor" offset="100%" style="stop-color:#F97316; stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <path id="logoPath" fill="url(#logoGradient)" d="" />
-            </svg>
+    <div class="w-full max-w-4xl bg-gray-800 rounded-2xl shadow-2xl p-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2 text-gray-100">Zufälliger Logo-Generator</h1>
+            <p class="text-gray-400">Erstelle einzigartige, organische Logos mit zufälligen Farben und Formen.</p>
         </div>
-        
-        <!-- Rundungs-Slider -->
-        <div class="mb-8 px-2">
-            <label for="smoothingSlider" class="block text-sm font-medium text-gray-300 mb-2">Rundung</label>
-            <input type="range" id="smoothingSlider" min="0.05" max="0.4" value="0.2" step="0.01">
-            <div class="flex justify-between text-xs text-gray-400 mt-1">
-                <span>Eckiger</span>
-                <span>Runder</span>
+
+        <!-- Haupt-Layout-Container -->
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+            
+            <!-- Linke Spalte: Logo-Vorschau -->
+            <div class="w-full md:w-1/2">
+                <div id="logo-container" class="checkerboard bg-white rounded-lg w-full h-80 flex items-center justify-center p-4 transition-all duration-300 aspect-square">
+                    <svg id="generated-logo" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop id="startColor" offset="0%" style="stop-color:#34D399; stop-opacity:1" />
+                                <stop id="endColor" offset="100%" style="stop-color:#F97316; stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path id="logoPath" fill="url(#logoGradient)" d="" />
+                    </svg>
+                </div>
             </div>
-        </div>
 
-        <!-- Button-Container -->
-        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
-            <button id="generateBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-500">
-                <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"></path></svg>
-                Neues Logo generieren
-            </button>
-            <button id="downloadSvgBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500">
-                <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                Als SVG herunterladen
-            </button>
-            <button id="openPngModalBtn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-400">
-                 <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                Als PNG herunterladen
-            </button>
+            <!-- Rechte Spalte: Steuerung -->
+            <div class="w-full md:w-1/2 flex flex-col gap-8">
+                <!-- Rundungs-Slider -->
+                <div class="w-full px-2">
+                    <label for="smoothingSlider" class="block text-sm font-medium text-gray-300 mb-2">Rundung</label>
+                    <input type="range" id="smoothingSlider" min="0.05" max="0.4" value="0.2" step="0.01">
+                    <div class="flex justify-between text-xs text-gray-400 mt-1">
+                        <span>Eckiger</span>
+                        <span>Runder</span>
+                    </div>
+                </div>
+
+                <!-- Button-Container -->
+                <div class="flex flex-col gap-4">
+                    <button id="generateBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-500">
+                        <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5"></path></svg>
+                        Neues Logo generieren
+                    </button>
+                    <button id="downloadSvgBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500">
+                        <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Als SVG herunterladen
+                    </button>
+                    <button id="openPngModalBtn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-400">
+                         <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Als PNG herunterladen
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -141,25 +151,20 @@
         const startColor = document.getElementById('startColor');
         const endColor = document.getElementById('endColor');
         
-        // Globale Variable für die aktuellen Formpunkte
         let currentPoints = [];
         const resolutions = [128, 256, 512, 1024, 2048];
-
-        // --- Funktionen zur Generierung ---
 
         function getRandomColor() {
             return `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
         }
         
-        // Generiert nur die Ankerpunkte für die Form
         function generatePoints() {
             const points = [];
             const numPoints = 8;
             const centerX = 100;
             const centerY = 100;
             const baseRadius = 80;
-            const irregularity = 0.4; // Etwas mehr Unregelmäßigkeit für interessantere Formen
-
+            const irregularity = 0.4;
             for (let i = 0; i < numPoints; i++) {
                 const angle = (i / numPoints) * Math.PI * 2;
                 const randomRadius = baseRadius * (1 + (Math.random() - 0.5) * irregularity * 2);
@@ -171,10 +176,8 @@
             return points;
         }
 
-        // Zeichnet den Pfad basierend auf den Punkten und dem Glättungsfaktor
         function generateBlobPath(points, smoothingFactor) {
             if (points.length === 0) return "";
-            
             const controlPoints = [];
             const numPoints = points.length;
             for (let i = 0; i < numPoints; i++) {
@@ -196,7 +199,6 @@
                 };
                 controlPoints.push({ before: cpBefore, after: cpAfter });
             }
-
             let d = `M ${points[0].x.toFixed(2)},${points[0].y.toFixed(2)}`;
             for (let i = 0; i < numPoints; i++) {
                 const next_i = (i + 1) % numPoints;
@@ -209,24 +211,19 @@
             return d;
         }
 
-        // Zeichnet die aktuelle Form mit dem Wert aus dem Slider neu
         function redrawCurrentLogoShape() {
             const smoothingFactor = parseFloat(smoothingSlider.value);
             const pathData = generateBlobPath(currentPoints, smoothingFactor);
             logoPath.setAttribute('d', pathData);
         }
 
-        // Generiert ein komplett neues Logo (Form und Farbe)
         function generateNewLogo() {
-            currentPoints = generatePoints(); // Neue Punkte erstellen
-            redrawCurrentLogoShape(); // Form mit aktuellem Slider-Wert zeichnen
-            
-            // Neue Farben setzen
+            currentPoints = generatePoints();
+            redrawCurrentLogoShape();
             startColor.style.stopColor = getRandomColor();
             endColor.style.stopColor = getRandomColor();
         }
 
-        // --- Download-Funktionen (unverändert) ---
         function downloadSVG() {
             const svgElement = document.getElementById('generated-logo');
             const svgData = new XMLSerializer().serializeToString(svgElement);
@@ -269,7 +266,6 @@
             img.src = url;
         }
 
-        // --- UI Setup & Event Listeners ---
         resolutions.forEach((res, index) => {
             const label = document.createElement('label');
             label.htmlFor = `res-${res}`;
@@ -295,7 +291,6 @@
             if (e.target === pngModal) { pngModal.classList.add('hidden'); }
         });
         
-        // Initiales Logo beim Laden der Seite erstellen
         window.addEventListener('load', generateNewLogo);
     </script>
 
