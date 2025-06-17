@@ -136,7 +136,7 @@
             justify-content: center;
             padding: 1rem;
             background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
+            /* backdrop-filter: blur(8px); <-- THIS WAS REMOVED */
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease-in-out;
@@ -519,7 +519,7 @@
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
-                pngModal.classList.remove('active'); // Changed from add('hidden')
+                pngModal.classList.remove('active');
                 document.body.classList.remove('modal-open');
             };
             img.src = url;
@@ -545,16 +545,16 @@
         smoothingSlider.addEventListener('input', redrawCurrentLogoShape);
         
         openPngModalBtn.addEventListener('click', () => {
-            pngModal.classList.add('active'); // Changed from remove('hidden')
+            pngModal.classList.add('active');
             document.body.classList.add('modal-open');
         });
         closePngModalBtn.addEventListener('click', () => {
-            pngModal.classList.remove('active'); // Changed from add('hidden')
+            pngModal.classList.remove('active');
             document.body.classList.remove('modal-open');
         });
         pngModal.addEventListener('click', (e) => {
             if (e.target === pngModal) {
-                pngModal.classList.remove('active'); // Changed from add('hidden')
+                pngModal.classList.remove('active');
                 document.body.classList.remove('modal-open');
             }
         });
